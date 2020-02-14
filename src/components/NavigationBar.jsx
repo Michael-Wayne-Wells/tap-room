@@ -1,27 +1,29 @@
 import React from 'react';
-import { Navbar, Button, Nav, FormControl, Form } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 
 function NavigationBar() {
   return (
     <div>
-      <style jsx>{`
-        .navbar {
-          background-color: rgba(0,0,0,.5)
-        }
-      `}
+      <style jsx>
+        {`
+          .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+          }
+        `}
       </style>
-      <Navbar  variant="dark">
+      <Navbar variant="dark" expand="lg">
         <Navbar.Brand href="#home">Tony Danza Tap Room</Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="#beerlist">Beer List</Nav.Link>
-        </Nav>
-        <Form inline>
-          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="light">Search</Button>
-        </Form>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <Nav.Link href="#beerlist">Beer List</Nav.Link>
+            <Nav.Link href="#beerlist">Contact</Nav.Link>
+            <Nav.Link href="#beerlist">About</Nav.Link>
+            <Nav.Link href="#beerlist">Add a Beer</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
-      
     </div>
   );
 }

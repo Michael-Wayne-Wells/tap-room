@@ -5,12 +5,15 @@ function HeaderBody() {
     <div className="headerBody">
       <style jsx>
         {`
-        .headerTitle {
-          text-align: center;
-          line-height: 400px;
-          color: white;
-          font-size: 8vw;
-        }
+          
+          .headerTitle {
+            text-align: center;
+            line-height: 400px;
+            color: white;
+            font-family:'Odibee Sans', cursive;
+            font-size: 10vw;
+            text-shadow: 4px 4px 4px black;
+          }
           .headerBody {
             height: 500px;
           }
