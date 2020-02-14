@@ -9,6 +9,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <div className="App">
+      <style jsx>{`
+        body {
+          background-color: black;
+        }
+      `}</style>
       <Header/>
       <Switch>
         <Route exact path='/' component={Home} />
