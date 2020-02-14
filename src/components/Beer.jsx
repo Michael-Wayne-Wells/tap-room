@@ -1,5 +1,5 @@
 
-import react from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 
@@ -9,11 +9,13 @@ function Beer(props) {
       <style jsx>{`
 
           `}</style>
+
+          BEER!
       </div>
     )
   }
 
-  Beer.PropTypes = {
+  Beer.propTypes = {
     names: PropTypes.string.isRequired,
     brand: PropTypes.string.isRequired,
     price: PropTypes.string,

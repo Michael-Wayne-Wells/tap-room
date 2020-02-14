@@ -1,4 +1,4 @@
-import react from 'react'
+import React from 'react'
 import NavigationBar from './NavigationBar'
 import HeaderBody from './HeaderBody'
 
