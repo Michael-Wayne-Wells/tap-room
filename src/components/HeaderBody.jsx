@@ -1,5 +1,4 @@
-import React from 'react'
-import { NavBar, Button } from 'react-bootstrap'
+import React from 'react';
 
 function HeaderBody() {
   return(
