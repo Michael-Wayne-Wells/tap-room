@@ -1,5 +1,6 @@
 import React from 'react'
 import Beer from './Beer'
+import Table from "react-bootstrap/Table";
 
 var masterBeerList = [
   {
@@ -39,17 +40,47 @@ var masterBeerList = [
 
 function BeerList() {
   return (
-    <div>
-      {masterBeerList.map((beer, index) => (
-        <Beer
-          name={beer.name}
-          brand={beer.brand}
-          price={beer.price}
-          flavor={beer.flavor}
-          ibu={beer.ibu}
-          abv={beer.abv}
-          key={index}/>
-      ))}
+    <div className="beerTable">
+      <style jsx>{`
+        .tableDate {
+          margin: 0 auto;
+          width: 60%;
+        }
+        .beerTable {
+          margin-top: 50px;
+        }
+      
+
+        th {
+          border-bottom: 2px solid black;
+        }
+      `}</style>
+
+      <Table className="tableDate" striped bordered hover variant="dark">
+        <thead>
+          <tr>
+            <th>Beer</th>
+            <th>Brand</th>
+            <th>flavor</th>
+            <th>IBU</th>
+            <th>ABV</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {masterBeerList.map((beer, index) => (
+            <Beer
+              name={beer.name}
+              brand={beer.brand}
+              price={beer.price}
+              flavor={beer.flavor}
+              ibu={beer.ibu}
+              abv={beer.abv}
+              key={index}
+            />
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }
