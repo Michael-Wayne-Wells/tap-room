@@ -23,7 +23,9 @@ function Beer(props) {
             font-size: 20px;
             font-weight: bold;
           }
-
+          .table {
+            margin-top: 50px;
+          }
           th {
             border-bottom: 2px solid black;
           }

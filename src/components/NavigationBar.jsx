@@ -4,7 +4,13 @@ import { Navbar, Button, Nav, FormControl, Form } from 'react-bootstrap';
 function NavigationBar() {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <style jsx>{`
+        .navbar {
+          background-color: rgba(0,0,0,.5)
+        }
+      `}
+      </style>
+      <Navbar  variant="dark">
         <Navbar.Brand href="#home">Tony Danza Tap Room</Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link href="/">Home</Nav.Link>
@@ -12,7 +18,7 @@ function NavigationBar() {
         </Nav>
         <Form inline>
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-          <Button variant="outline-info">Search</Button>
+          <Button variant="light">Search</Button>
         </Form>
       </Navbar>
       
