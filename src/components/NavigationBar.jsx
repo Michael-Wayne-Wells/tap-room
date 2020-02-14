@@ -18,9 +18,9 @@ function NavigationBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="#beerlist">Beer List</Nav.Link>
-            <Nav.Link href="#beerlist">Contact</Nav.Link>
-            <Nav.Link href="#beerlist">About</Nav.Link>
-            <Nav.Link href="#beerlist">Add a Beer</Nav.Link>
+            <Nav.Link href="#contact">Contact</Nav.Link>
+            <Nav.Link href="#about">About</Nav.Link>
+            <Nav.Link href="#newbeer">Add a Beer</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
