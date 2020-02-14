@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import BeerList from './components/BeerList'
 import { Switch, Route } from "react-router-dom";
+import "./fonts.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
