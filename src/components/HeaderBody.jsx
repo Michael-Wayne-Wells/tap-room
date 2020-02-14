@@ -1,4 +1,5 @@
 import React from 'react';
+import Zoom from "react-reveal/Zoom";
 
 function HeaderBody() {
   return (
@@ -19,7 +20,9 @@ function HeaderBody() {
           }
         `}
       </style>
-      <h1 className="headerTitle">Tony Danza's Tap Room</h1>
+      <Zoom>
+        <h1 className="headerTitle">Tony Danza's Tap Room
+        </h1></Zoom>
     </div>
   );
 }

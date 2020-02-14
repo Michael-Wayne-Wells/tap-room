@@ -7,7 +7,9 @@ import "./fonts.css"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
+
 function App() {
+
   return (
     <div className="App">
       <style jsx>{`
@@ -15,11 +17,13 @@ function App() {
           background-color: black;
         }
       `}</style>
-      <Header/>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/beerlist' component={BeerList} />
-      </Switch>
+      <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+      
+          <Route path="/beerlist" component={BeerList} />
+      
+        </Switch>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import Beer from './Beer'
 import Table from "react-bootstrap/Table";
+import Fade from "react-reveal/Fade";
 
 var masterBeerList = [
   {
@@ -47,9 +48,8 @@ function BeerList() {
           width: 60%;
         }
         .beerTable {
-          margin-top: 50px;
+          margin: 50px;
         }
-      
 
         th {
           border-bottom: 2px solid black;
@@ -67,19 +67,21 @@ function BeerList() {
             <th>Price</th>
           </tr>
         </thead>
+          <Fade bottom>
         <tbody>
-          {masterBeerList.map((beer, index) => (
-            <Beer
-              name={beer.name}
-              brand={beer.brand}
-              price={beer.price}
-              flavor={beer.flavor}
-              ibu={beer.ibu}
-              abv={beer.abv}
-              key={index}
-            />
-          ))}
+            {masterBeerList.map((beer, index) => (
+              <Beer
+                name={beer.name}
+                brand={beer.brand}
+                price={beer.price}
+                flavor={beer.flavor}
+                ibu={beer.ibu}
+                abv={beer.abv}
+                key={index}
+              />
+            ))}
         </tbody>
+          </Fade>
       </Table>
     </div>
   );
