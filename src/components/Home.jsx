@@ -13,7 +13,6 @@ function Home() {
         }
         .danza {
           margin: 40px auto;
-
           width: 50%;
         }
       `}</style>

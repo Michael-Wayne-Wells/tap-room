@@ -1,42 +1,41 @@
-import React from 'react'
-import Beer from './Beer'
+import React from "react";
+import Beer from "./Beer";
 import Table from "react-bootstrap/Table";
 import Fade from "react-reveal/Fade";
 
 var masterBeerList = [
   {
-    name: 'Hamms',
-    brand: 'Hamms',
-    price: '$3',
-    flavor: 'Gets the job done.',
+    name: "Hamms",
+    brand: "Hamms",
+    price: "$3",
+    flavor: "Gets the job done.",
     ibu: "It' a Hamms...",
     abv: "5%"
   },
   {
-    name: 'Raspberry Blush',
-    brand: 'Mikkeller',
-    price: '$6',
-    flavor: 'Rasperry, duh!.',
+    name: "Raspberry Blush",
+    brand: "Mikkeller",
+    price: "$6",
+    flavor: "Rasperry, duh!.",
     ibu: "not many",
     abv: "4%"
   },
   {
-    name: 'American Dream',
-    brand: 'Mikkerller',
-    price: '$7',
-    flavor: 'Apricot, light hops, grapefruit.',
+    name: "American Dream",
+    brand: "Mikkerller",
+    price: "$7",
+    flavor: "Apricot, light hops, grapefruit.",
     ibu: "n/a",
     abv: "4.6%"
   },
   {
-    name: 'Caldene',
-    brand: '3 Floyds',
-    price: '$10',
-    flavor: 'Lemongrass, grain, mineral, grapefruit.',
+    name: "Caldene",
+    brand: "3 Floyds",
+    price: "$10",
+    flavor: "Lemongrass, grain, mineral, grapefruit.",
     ibu: "90",
     abv: "6.5%"
-  },
- 
+  }
 ];
 
 function BeerList() {
@@ -67,8 +66,8 @@ function BeerList() {
             <th>Price</th>
           </tr>
         </thead>
-          <Fade bottom>
-        <tbody>
+        <Fade bottom>
+          <tbody>
             {masterBeerList.map((beer, index) => (
               <Beer
                 name={beer.name}
@@ -80,11 +79,11 @@ function BeerList() {
                 key={index}
               />
             ))}
-        </tbody>
-          </Fade>
+          </tbody>
+        </Fade>
       </Table>
     </div>
   );
 }
 
- export default BeerList
+export default BeerList;

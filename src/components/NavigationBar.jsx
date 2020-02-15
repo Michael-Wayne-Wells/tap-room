@@ -1,5 +1,5 @@
-import React from 'react';
-import { Navbar, Nav} from 'react-bootstrap';
+import React from "react";
+import { Navbar, Nav } from "react-bootstrap";
 
 function NavigationBar() {
   return (
@@ -27,4 +27,4 @@ function NavigationBar() {
     </div>
   );
 }
- export default NavigationBar
+export default NavigationBar;

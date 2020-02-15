@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationBar from "./NavigationBar";
 import HeaderBody from "./HeaderBody";
-import beer from "../beer.jpeg"
+import beer from "../beer.jpeg";
 
 function Header() {
   return (
@@ -11,7 +11,6 @@ function Header() {
           .headerFull {
             background: url(${beer});
             background-size: 100%;
-            
             background-repeat: no-repeat;
             background-position: center;
           }
