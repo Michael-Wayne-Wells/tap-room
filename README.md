@@ -1,68 +1,64 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tony Danza's Tap Room
+## Created by Michael Wells
 
-## Available Scripts
+_
 
-In the project directory, you can run:
+#### By _**Michael Wells**_
 
-### `yarn start`
+## Description
+This application is a website for a imagenery beer hall to demonstrate setup and routing in React.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Diagram of routing:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![diagram](/diagram.jpg)
 
-### `yarn test`
+_ _
+This website allows users to:
+* See available beers with flavor notes, cost, ibu, abv, and price
+* Fill out a form to add a new beer
+* Submit a contact request form
+* Navigate as though this single pag is multple pages
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Setup/Installation Requirements
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* clone and open the file locally
+* _in terminal run:_
+>$git clone https://github.com/Michael-Wayne-Wells/tap-room.git
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Navigate into project folder
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+>$cd tap-room
 
-### `yarn eject`
+* _install webpack_
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+>$npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* _run the program_
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+>$npm run start
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Known Bugs
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+_No known bugs_
 
-### Code Splitting
+## Support and contact details
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+_If you have any issues with the program or want to reach out, email [mwells1286@gmail.com](href="mailto:mwells1286@gmail.com")_
 
-### Analyzing the Bundle Size
+## Technologies Used
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+_This program utilized:_
+* _JavaScript_
+* _HTML_
+* _CSS_
+* _Bootstrap_
+* _React_
 
-### Making a Progressive Web App
+### License
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+*Licensed under MIT license*
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Copyright (c) 2020 **_Michael Wells_**
