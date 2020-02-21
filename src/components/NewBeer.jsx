@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 } from "uuid";
+import { withRouter } from "react-router-dom";
+
 
 function NewBeer(props) {
   let _name = null;
@@ -27,6 +29,7 @@ function NewBeer(props) {
     _ibu = "";
     _abv = "";
     _price = "";
+    props.history.push('beerlist');
   };
   return (
     <div>
@@ -127,4 +130,4 @@ NewBeer.propTypes = {
   onNewBeerCreation: PropTypes.func
 };
 
-export default NewBeer;
+export default withRouter(NewBeer);
