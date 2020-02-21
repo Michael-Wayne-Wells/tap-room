@@ -18,11 +18,23 @@ class App extends React.Component {
     this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
   }
   handleAddingNewBeerToList(beer) {
-    var newMasterBeerList = this.state.masterBeerList.slice();
+    let newMasterBeerList = this.state.masterBeerList.slice();
     newMasterBeerList.push(beer);
     this.setState({ masterBeerList: newMasterBeerList });
   }
-
+  onSellBeer = (id) => {
+    console.log(id);
+    let newMasterBeerList = this.state.masterBeerList.slice();
+    newMasterBeerList.forEach(function(beer) {
+      if (id === beer.id) {
+        beer.kegAmount -= 1;
+        console.log(beer.kegAmount);
+        
+      }
+    });
+    
+    this.setState({ masterBeerList: newMasterBeerList });
+  };
   render() {
     return (
       <div className="App">
@@ -40,7 +52,12 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route
             path="/beerlist"
-            render={() => <BeerList beerList={this.state.masterBeerList} />}
+            render={() => (
+              <BeerList
+                beerList={this.state.masterBeerList}
+                onSellBeer={this.onSellBeer}
+              />
+            )}
           />
           <Route path="/contact" component={Contact} />
           <Route

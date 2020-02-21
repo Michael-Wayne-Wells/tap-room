@@ -42,6 +42,7 @@ function BeerList(props) {
             <th>IBU</th>
             <th>ABV</th>
             <th>Price</th>
+            <th>Keg Amount</th>
           </tr>
         </thead>
         <Fade bottom>
@@ -55,6 +56,9 @@ function BeerList(props) {
                 ibu={beer.ibu}
                 abv={beer.abv}
                 key={beer.id}
+                kegAmount={beer.kegAmount}
+                id={beer.id}
+                onSellBeer={props.onSellBeer}
               />
             ))}
           </tbody>

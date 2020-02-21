@@ -1,19 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const sellBeer = x => {
-  console.log(x);
-};
+
 function Beer(props) {
   return (
     <>
       <style jsx>
         {`
-       
           .sellButton {
             padding-left: 15px;
             padding-right: 15px;
             color: white;
+            width: 100%;
             background-color: blue;
             border-radius: 4px;
             border: 4px solid black;
@@ -25,9 +23,6 @@ function Beer(props) {
           .sellButton:active {
             transform: scale(0.8);
           }
-        
-
-        
         `}
       </style>
 
@@ -38,10 +33,11 @@ function Beer(props) {
         <td> {props.ibu}</td>
         <td> {props.abv}</td>
         <td> {props.price} </td>
+        <td> {props.kegAmount} </td>
         <td
           className="sellButton"
           onClick={function(e) {
-            sellBeer("hj");
+            props.onSellBeer(props.id);
           }}
         >
           Sell
@@ -54,9 +50,13 @@ function Beer(props) {
 Beer.propTypes = {
   name: PropTypes.string.isRequired,
   brand: PropTypes.string.isRequired,
-  price: PropTypes.string,
-  flavor: PropTypes.string.isRequired,
-  ibu: PropTypes.string,
-  abv: PropTypes.string
+  price: PropTypes.number.isRequired,
+  flavor: PropTypes.string,
+  ibu: PropTypes.number,
+  abv: PropTypes.number,
+  kegAmount: PropTypes.number.isRequired,
+  onSellBeer: PropTypes.func,
+  id: PropTypes.string
+
 };
 export default Beer;
