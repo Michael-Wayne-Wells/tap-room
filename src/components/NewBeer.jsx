@@ -1,6 +1,15 @@
 import React from "react";
+import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
-function NewBeer() {
+function NewBeer(props) {
+ let _name = null;
+ let _brand =null;
+ let _flavor =null;
+ let _ibu = null;
+ let _abv = null;
+ let _price = null;
+  
   return (
     <div>
       <style jsx>{`
@@ -25,30 +34,61 @@ function NewBeer() {
           margin-top: 20px;
         }
       `}</style>
-      <form>
+
+      const handleNewBeerSubmission = () => {
+        event.preventDefault();
+        props.onNewBeerCreation({
+          name: _name.value, 
+          brewer: _brewer.value,
+          flavor: _flavor.value,
+          ibu: _ibu.value,
+          abv: _abv.value,
+          price: _price.value,
+          id: v4()
+        });
+        _name = '';
+        _brewer = '';
+        _flavor = '';
+        _ibu = '';
+        _abv = '';
+        _price = '';
+      }
+      <form onSubmit={handleNewBeerSubmission}>
         <label>Beer Name</label>
         <fieldset>
-          <input type="text"></input>
+          <input type="text"
+          id="name"
+          ref={(input) => {_name = input}}/>
         </fieldset>
         <label>Brewer</label>
         <fieldset>
-          <input type="text"></input>
+          <input type="text"
+          id="brewer"
+          ref={(input) => {_brewer = input}}/>
         </fieldset>
         <label>Flavor Notes</label>
         <fieldset>
-          <input type="text"></input>
+          <input type="text"
+          id="flavor"
+          ref={(input) => {_brewer = input}}/>
         </fieldset>
         <label>IBU</label>
         <fieldset>
-          <input type="number"></input>
+          <input type="number"
+          id="ibu"
+          ref={(input) => {_ibu = input}}/>
         </fieldset>
         <label>ABV</label>
         <fieldset>
-          <input type="number"></input>
+          <input type="number"
+          id="abv"
+          ref={(input) => {_abv =input}}/>
         </fieldset>
         <label>Price</label>
         <fieldset>
-          <input type="number"></input>
+          <input type="number"i
+          id="price"
+          ref={(input) => {_price = input}}/>
         </fieldset>
         <button className="btn btn-dark" type="submit">
           Add Beer
@@ -57,4 +97,8 @@ function NewBeer() {
     </div>
   );
 }
+
+NewBeer.propTypes = {
+  onNewBeerCreation: PropTypes.func
+};
 export default NewBeer;
