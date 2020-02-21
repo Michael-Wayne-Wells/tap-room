@@ -62,6 +62,7 @@ function NewBeer(props) {
         <fieldset>
           <input
             type="text"
+            value="test"
             id="name"
             ref={input => {
               _name = input;
@@ -73,6 +74,7 @@ function NewBeer(props) {
           <input
             type="text"
             id="brand"
+            value="test"
             ref={input => {
               _brand = input;
             }}
@@ -83,6 +85,7 @@ function NewBeer(props) {
           <input
             type="text"
             id="flavor"
+            value="test"
             ref={input => {
               _flavor = input;
             }}
@@ -92,6 +95,7 @@ function NewBeer(props) {
         <fieldset>
           <input
             type="number"
+            value="4"
             id="ibu"
             ref={input => {
               _ibu = input;
@@ -102,6 +106,7 @@ function NewBeer(props) {
         <fieldset>
           <input
             type="number"
+            value="4"
             id="abv"
             ref={input => {
               _abv = input;
@@ -112,7 +117,7 @@ function NewBeer(props) {
         <fieldset>
           <input
             type="number"
-            i
+            value="4"
             id="price"
             ref={input => {
               _price = input;

@@ -6,12 +6,12 @@ import PropTypes from 'prop-types';
 
 
 
-
 function BeerList(props) {
   return (
     <div className="beerTable">
       <style jsx>{`
         .tableDate {
+          text-align: center;
           margin: 0 auto;
           width: 60%;
           color: white;
@@ -23,6 +23,9 @@ function BeerList(props) {
           color: white;
           border-left: 1px solid white;
           width: 25%;
+        }
+        .kegAmount {
+
         }
 
         th {
@@ -42,7 +45,8 @@ function BeerList(props) {
             <th>IBU</th>
             <th>ABV</th>
             <th>Price</th>
-            <th>Keg Amount</th>
+            <th> Keg Amount
+            </th>
           </tr>
         </thead>
         <Fade bottom>

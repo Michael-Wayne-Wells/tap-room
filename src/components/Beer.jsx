@@ -3,6 +3,11 @@ import PropTypes from "prop-types";
 
 
 function Beer(props) {
+  const kegAmountCss = (amount) => {
+    let widthValue = parseInt((amount / 165) * 100);
+    console.log(widthValue);
+    return widthValue;
+  };
   return (
     <>
       <style jsx>
@@ -18,10 +23,28 @@ function Beer(props) {
           }
           .sellButton:hover {
             text-shadow: 1.5px 1.5x black;
-            transform: scale(1.2);
+            transform: scale(1.1);
           }
           .sellButton:active {
-            transform: scale(0.8);
+            transform: scale(0.9);
+          }
+          .kegContainer {
+            border-radius: 40%;
+            width: 80px;
+            height: 100px;
+            overflow: hidden;
+            border: 2px solid grey;
+          }
+
+          .emptyKeg {
+            height: ${100 - kegAmountCss(props.kegAmount)}%;
+            background-color: black;
+          }
+          .kegAmount {
+            background-color: #ffce26;
+            border-top: 10px solid #ffffe6;
+            height: ${kegAmountCss(props.kegAmount)}%;
+            width: 100px;
           }
         `}
       </style>
@@ -33,7 +56,13 @@ function Beer(props) {
         <td> {props.ibu}</td>
         <td> {props.abv}</td>
         <td> {props.price} </td>
-        <td> {props.kegAmount} </td>
+        <td>Beers Left:<br/>
+          {props.kegAmount}
+          <div className="kegContainer">
+            <div className="emptyKeg"></div>
+            <div className="kegAmount"></div>
+          </div>
+        </td>
         <td
           className="sellButton"
           onClick={function(e) {
