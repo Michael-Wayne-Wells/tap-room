@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 
 
+
 function BeerList(props) {
   return (
     <div className="beerTable">
@@ -13,17 +14,26 @@ function BeerList(props) {
         .tableDate {
           margin: 0 auto;
           width: 60%;
+          color: white;
         }
         .beerTable {
           margin: 50px;
         }
+        .beerTable td {
+          color: white;
+          border-left: 1px solid white;
+          width: 25%;
+        }
 
         th {
-          border-bottom: 2px solid black;
+          font-size: 20px;
+          text-align: center;
+          border-bottom: 4px solid white;
+          border-left: 1px solid whitesmoke;
         }
       `}</style>
 
-      <Table className="tableDate" striped bordered hover variant="dark">
+      <Table className="tableDate" bordered variant="dark">
         <thead>
           <tr>
             <th>Beer</th>

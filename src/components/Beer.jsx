@@ -1,33 +1,51 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+const sellBeer = x => {
+  console.log(x);
+};
 function Beer(props) {
   return (
     <>
       <style jsx>
         {`
-          td {
-            width: 25%;
+       
+          .sellButton {
+            padding-left: 15px;
+            padding-right: 15px;
+            color: white;
+            background-color: blue;
+            border-radius: 4px;
+            border: 4px solid black;
           }
-
-          td:nth-child(1) {
-            background: #54575c;
-            width: 18%;
-            color: whitesmoke;
+          .sellButton:hover {
             text-shadow: 1.5px 1.5x black;
-            font-size: 20px;
-            font-weight: bold;
+            transform: scale(1.2);
           }
+          .sellButton:active {
+            transform: scale(0.8);
+          }
+        
+
+        
         `}
       </style>
 
-      <tr>
+      <tr className="beerTable">
         <td> {props.name} </td>
         <td> {props.brand}</td>
         <td> {props.flavor}</td>
         <td> {props.ibu}</td>
         <td> {props.abv}</td>
         <td> {props.price} </td>
+        <td
+          className="sellButton"
+          onClick={function(e) {
+            sellBeer("hj");
+          }}
+        >
+          Sell
+        </td>
       </tr>
     </>
   );
