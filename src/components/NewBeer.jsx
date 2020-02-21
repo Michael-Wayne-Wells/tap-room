@@ -14,7 +14,7 @@ function NewBeer(props) {
     event.preventDefault();
     props.onNewBeerCreation({
       name: _name.value,
-      brand: _brand,
+      brand: _brand.value,
       flavor: _flavor.value,
       ibu: _ibu.value,
       abv: _abv.value,
