@@ -21,7 +21,7 @@ function NewBeer(props) {
       ibu: parseInt(_ibu.value),
       abv: parseInt(_abv.value),
       price: parseInt(_price.value),
-      kegAmount: 165,
+      kegAmount: 5,
       id: v4()
     });
     _name = "";

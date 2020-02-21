@@ -22,19 +22,24 @@ class App extends React.Component {
     newMasterBeerList.push(beer);
     this.setState({ masterBeerList: newMasterBeerList });
   }
-  onSellBeer = (id) => {
-    console.log(id);
+
+  onDeleteBeer = (index) => {
+    
+       this.setState({
+         masterBeerList: this.state.masterBeerList.filter((_, i) => i !== index)
+       });
+  }
+
+  onSellBeer = id => {
     let newMasterBeerList = this.state.masterBeerList.slice();
-    newMasterBeerList.forEach(function(beer) {
+    newMasterBeerList.forEach(function(beer, index) {
       if (id === beer.id) {
         beer.kegAmount -= 1;
-        console.log(beer.kegAmount);
-        
       }
     });
-    
     this.setState({ masterBeerList: newMasterBeerList });
   };
+
   render() {
     return (
       <div className="App">
@@ -56,6 +61,7 @@ class App extends React.Component {
               <BeerList
                 beerList={this.state.masterBeerList}
                 onSellBeer={this.onSellBeer}
+                onDeleteBeer={this.onDeleteBeer}
               />
             )}
           />

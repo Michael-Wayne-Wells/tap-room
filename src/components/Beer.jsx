@@ -40,12 +40,27 @@ function Beer(props) {
             height: ${100 - kegAmountCss(props.kegAmount)}%;
             background-color: black;
           }
+
           .kegAmount {
             background-color: #ffce26;
             border-top: 10px solid #ffffe6;
             height: ${kegAmountCss(props.kegAmount)}%;
             width: 100px;
           }
+          .removeButton {
+            padding-left: 15px;
+            padding-right: 15px;
+            color: black;
+            width: 100%;
+            background-color: red;
+            border-radius: 4px;
+            border: 4px solid black;
+          }
+          .removeButton:hover {
+            text-shadow: 1.5px 1.5x black;
+            transform: scale(1.1);
+          }
+          .;
         `}
       </style>
 
@@ -56,7 +71,9 @@ function Beer(props) {
         <td> {props.ibu}</td>
         <td> {props.abv}</td>
         <td> {props.price} </td>
-        <td>Beers Left:<br/>
+        <td>
+          Beers Left:
+          <br />
           {props.kegAmount}
           <div className="kegContainer">
             <div className="emptyKeg"></div>
@@ -70,6 +87,16 @@ function Beer(props) {
           }}
         >
           Sell
+        </td>
+        <td
+          className="removeButton"
+          onClick={function(e) {
+            console.log(props.index);
+            
+            props.onDeleteBeer(props.index);
+          }}
+        >
+          Remove Keg
         </td>
       </tr>
     </>
@@ -85,7 +112,9 @@ Beer.propTypes = {
   abv: PropTypes.number,
   kegAmount: PropTypes.number.isRequired,
   onSellBeer: PropTypes.func,
-  id: PropTypes.string
+  id: PropTypes.string,
+  index: PropTypes.number,
+  onDeleteBeer: PropTypes.func
 
 };
 export default Beer;

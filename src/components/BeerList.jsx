@@ -62,7 +62,9 @@ function BeerList(props) {
                 key={beer.id}
                 kegAmount={beer.kegAmount}
                 id={beer.id}
+                index={index}
                 onSellBeer={props.onSellBeer}
+                onDeleteBeer={props.onDeleteBeer}
               />
             ))}
           </tbody>
