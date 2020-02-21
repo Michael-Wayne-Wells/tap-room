@@ -9,28 +9,49 @@ import Error from "./components/Error";
 import "./fonts.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  return (
-    <div className="App">
-      <style jsx>{`
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterBeerList: []
+    };
+  }
+  handleAddingNewBeerToList(beer) {
+    var newMasterBeerList = this.state.masterBeerList.slice();
+    newMasterBeerList.push(beer);
+    this.setState({ masterBeerList: newMasterBeerList });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <style jsx>{`
   
       body {
         background: #000000; 
         );
         }
       `}</style>
-      <div className="header">
-        <Header />
+        <div className="header">
+          <Header />
+        </div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route
+            path="/beerlist"
+            render={() => <BeerList beerList={this.masterBeerList} />}
+          />
+          <Route path="/contact" component={Contact} />
+          <Route
+            path="/newbeer"
+            render={() => (
+              <NewBeer onNewBeerCreation={this.handleAddingNewBeerToList} />
+            )}
+          />
+          <Route component={Error} />
+        </Switch>
       </div>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/beerlist" component={BeerList} />
-        <Route path="/contact" component={Contact} />
-        <Route path="/newbeer" component={NewBeer} />
-        <Route component={Error} />
-      </Switch>
-    </div>
-  );
+    );
+  }
 }
-
 export default App;

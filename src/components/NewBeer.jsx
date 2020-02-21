@@ -1,33 +1,33 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
+import PropTypes from "prop-types";
+import { v4 } from "uuid";
 
 function NewBeer(props) {
- let _name = null;
- let _brand =null;
- let _flavor =null;
- let _ibu = null;
- let _abv = null;
- let _price = null;
- 
-   const handleNewBeerSubmission = (event) => {
-     event.preventDefault();
-     props.onNewBeerCreation({
-       name: _name.value,
-       brewer: _brand,
-       flavor: _flavor.value,
-       ibu: _ibu.value,
-       abv: _abv.value,
-       price: _price.value,
-       id: v4()
-     });
-     _name = "";
-     _brand = '';
-     _flavor = '';
-     _ibu = '';
-     _abv = '';
-     _price = '';
-   };
+  let _name = null;
+  let _brand = null;
+  let _flavor = null;
+  let _ibu = null;
+  let _abv = null;
+  let _price = null;
+
+  const handleNewBeerSubmission = event => {
+    event.preventDefault();
+    props.onNewBeerCreation({
+      name: _name.value,
+      brewer: _brand,
+      flavor: _flavor.value,
+      ibu: _ibu.value,
+      abv: _abv.value,
+      price: _price.value,
+      id: v4()
+    });
+    _name = "";
+    _brand = "";
+    _flavor = "";
+    _ibu = "";
+    _abv = "";
+    _price = "";
+  };
   return (
     <div>
       <style jsx>{`
@@ -53,43 +53,67 @@ function NewBeer(props) {
         }
       `}</style>
 
-    
       <form onSubmit={handleNewBeerSubmission}>
         <label>Beer Name</label>
         <fieldset>
-          <input type="text"
-          id="name"
-          ref={(input) => {_name = input}}/>
+          <input
+            type="text"
+            id="name"
+            ref={input => {
+              _name = input;
+            }}
+          />
         </fieldset>
         <label>Brewer</label>
         <fieldset>
-          <input type="text"
-          id="brewer"
-          ref={(input) => {_brand = input}}/>
+          <input
+            type="text"
+            id="brewer"
+            ref={input => {
+              _brand = input;
+            }}
+          />
         </fieldset>
         <label>Flavor Notes</label>
         <fieldset>
-          <input type="text"
-          id="flavor"
-          ref={(input) => {_brand = input}}/>
+          <input
+            type="text"
+            id="flavor"
+            ref={input => {
+              _brand = input;
+            }}
+          />
         </fieldset>
         <label>IBU</label>
         <fieldset>
-          <input type="number"
-          id="ibu"
-          ref={(input) => {_ibu = input}}/>
+          <input
+            type="number"
+            id="ibu"
+            ref={input => {
+              _ibu = input;
+            }}
+          />
         </fieldset>
         <label>ABV</label>
         <fieldset>
-          <input type="number"
-          id="abv"
-          ref={(input) => {_abv =input}}/>
+          <input
+            type="number"
+            id="abv"
+            ref={input => {
+              _abv = input;
+            }}
+          />
         </fieldset>
         <label>Price</label>
         <fieldset>
-          <input type="number"i
-          id="price"
-          ref={(input) => {_price = input}}/>
+          <input
+            type="number"
+            i
+            id="price"
+            ref={input => {
+              _price = input;
+            }}
+          />
         </fieldset>
         <button className="btn btn-dark" type="submit">
           Add Beer
@@ -100,7 +124,7 @@ function NewBeer(props) {
 }
 
 NewBeer.propTypes = {
- onNewBeerCreation: PropTypes.func
+  onNewBeerCreation: PropTypes.func
 };
 
 export default NewBeer;
