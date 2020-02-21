@@ -14,7 +14,7 @@ function NewBeer(props) {
     event.preventDefault();
     props.onNewBeerCreation({
       name: _name.value,
-      brewer: _brand,
+      brand: _brand,
       flavor: _flavor.value,
       ibu: _ibu.value,
       abv: _abv.value,
@@ -64,11 +64,11 @@ function NewBeer(props) {
             }}
           />
         </fieldset>
-        <label>Brewer</label>
+        <label>Brand</label>
         <fieldset>
           <input
             type="text"
-            id="brewer"
+            id="brand"
             ref={input => {
               _brand = input;
             }}
@@ -80,7 +80,7 @@ function NewBeer(props) {
             type="text"
             id="flavor"
             ref={input => {
-              _brand = input;
+              _flavor = input;
             }}
           />
         </fieldset>

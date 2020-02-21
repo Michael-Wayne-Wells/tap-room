@@ -15,6 +15,7 @@ class App extends React.Component {
     this.state = {
       masterBeerList: []
     };
+    this.handleAddingNewBeerToList = this.handleAddingNewBeerToList.bind(this);
   }
   handleAddingNewBeerToList(beer) {
     var newMasterBeerList = this.state.masterBeerList.slice();
@@ -39,7 +40,7 @@ class App extends React.Component {
           <Route exact path="/" component={Home} />
           <Route
             path="/beerlist"
-            render={() => <BeerList beerList={this.masterBeerList} />}
+            render={() => <BeerList beerList={this.state.masterBeerList} />}
           />
           <Route path="/contact" component={Contact} />
           <Route
