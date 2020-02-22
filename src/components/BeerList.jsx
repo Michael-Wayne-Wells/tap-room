@@ -19,14 +19,6 @@ function BeerList(props) {
         .beerTable {
           margin: 50px;
         }
-        .beerTable td {
-          color: white;
-          border-left: 1px solid white;
-          width: 25%;
-        }
-        .kegAmount {
-
-        }
 
         th {
           font-size: 20px;
