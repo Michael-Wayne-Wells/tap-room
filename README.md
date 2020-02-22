@@ -1,23 +1,45 @@
 # Tony Danza's Tap Room
 ## Created by Michael Wells
 
-_
-
-#### By _**Michael Wells**_
 
 ## Description
 This application is a website for a imagenery beer hall to demonstrate setup and routing in React.
 
 Diagram of routing:
 
-![diagram](/diagram.jpg)
+![diagram](/diagram.png)
 
-_ _
-This website allows users to:
+## State and information flow:
+* App.js is the only Stateful component
+
+### New Beer:
+* A new beer is added to by the user on NewBeer.jsx 
+* Information is passed through and rendered in App.jsx
+* Information is the passed through BeerList to its endpoint, Beer.jsx
+
+
+### Sell Beer:
+* User clicks Sell button
+* sellBeer function is called via props in App.js
+* kegAmount is decremented and information is then passed back down through Beerlist and then Beer.
+* As kegAmount changes, this value is illustrated in the keg image.
+* If kegAmount hits 0, It will show the keg is empty and given an option to delete it.
+
+
+### Delete a Beer:
+* User clicks Delete
+* removeBeer function is called in App.js via props
+* Beer with matching index is removed and masterBeerList is updated
+* information is then passed to BeerList.jsx
+
+
+## This website allows users to:
 * See available beers with flavor notes, cost, ibu, abv, and price
 * Fill out a form to add a new beer
-* Submit a contact request form
-* Navigate as though this single pag is multple pages
+* 'Sell' a beer
+* See the amount left in a particular keg
+* Remove a keg
+* Navigate as though this single page is multple pages
 
 
 ## Setup/Installation Requirements

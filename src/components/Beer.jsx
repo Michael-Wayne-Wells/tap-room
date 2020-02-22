@@ -9,33 +9,35 @@ function Beer(props) {
   };
   if (props.kegAmount < 1) {
     return (
-      < >
-      <style jsx>{` .removeButton {
-              padding-left: 15px;
-              padding-right: 15px;
-              color: black;
-              width: 30px;
-              background-color: red;
-              border-radius: 4px;
-              border: 4px solid black;
-            }
-            .removeButton:hover {
-              text-shadow: 1.5px 1.5x black;
-              transform: scale(1.1);
-            }`}</style>
-      <tr>
-        <td>The Keg Is Empty!</td>
-        <td
-          className="removeButton"
-          onClick={function(e) {
-            console.log(props.index);
+      <>
+        <style jsx>{`
+          .removeButton {
+            padding-left: 15px;
+            padding-right: 15px;
+            color: black;
+            width: 30px;
+            background-color: red;
+            border-radius: 4px;
+            border: 4px solid black;
+          }
+          .removeButton:hover {
+            text-shadow: 1.5px 1.5x black;
+            transform: scale(1.1);
+          }
+        `}</style>
+        <tr>
+          <td>The Keg Is Empty!</td>
+          <td
+            className="removeButton"
+            onClick={function(e) {
+              console.log(props.index);
 
-            props.onDeleteBeer(props.index);
-          }}
-        >
-          Remove Keg
-        </td>
-      </tr>
+              props.onDeleteBeer(props.index);
+            }}
+          >
+            Remove Keg
+          </td>
+        </tr>
       </>
     );
   } else {

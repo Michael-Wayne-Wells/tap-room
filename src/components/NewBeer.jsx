@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { v4 } from "uuid";
 import { withRouter } from "react-router-dom";
 
-
 function NewBeer(props) {
   let _name = null;
   let _brand = null;
@@ -30,7 +29,7 @@ function NewBeer(props) {
     _ibu = "";
     _abv = "";
     _price = "";
-    props.history.push('beerlist');
+    props.history.push("beerlist");
   };
   return (
     <div>

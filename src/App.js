@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Contact from "./components/Contact";
 import NewBeer from "./components/NewBeer";
 import BeerList from "./components/BeerList";
 import { Switch, Route } from "react-router-dom";
@@ -23,12 +22,11 @@ class App extends React.Component {
     this.setState({ masterBeerList: newMasterBeerList });
   }
 
-  onDeleteBeer = (index) => {
-    
-       this.setState({
-         masterBeerList: this.state.masterBeerList.filter((_, i) => i !== index)
-       });
-  }
+  onDeleteBeer = index => {
+    this.setState({
+      masterBeerList: this.state.masterBeerList.filter((_, i) => i !== index)
+    });
+  };
 
   onSellBeer = id => {
     let newMasterBeerList = this.state.masterBeerList.slice();
@@ -65,7 +63,6 @@ class App extends React.Component {
               />
             )}
           />
-          <Route path="/contact" component={Contact} />
           <Route
             path="/newbeer"
             render={() => (
